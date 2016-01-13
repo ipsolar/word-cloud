@@ -1,0 +1,32 @@
+/*
+  Component styles. For the moment these should all be
+  manually namespaced so as to not be global styles.
+*/
+
+
+.word-cloud-plot {
+  border: 1px solid lightgrey;
+  font-family: sans-serif;
+}
+
+.word-cloud-plot .title {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.word-cloud-plot .cloud .token {
+  display:inline-block;
+  margin:0.3em;
+}
+
+.word-cloud-plot .cloud .token .token-term {
+
+}
+
+.unique {
+  color:orange !important;
+}
+
+.word-cloud-plot .cloud .token .token-score {
+  color: grey;
+}
