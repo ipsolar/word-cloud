@@ -6,6 +6,8 @@ export default class WordCloud {
     this.opts = opts;
     this._container = opts.container;;
     this.container = d3.select(this._container);
+
+    this.dispatch = d3.dispatch('select');
   }
 
   updateData(data) {
@@ -63,6 +65,7 @@ export default class WordCloud {
   }
 
   render() {
+    var self = this;
 
     var wordCloud = this.container.selectAll('div.word-cloud-plot')
       .data(this.documents);
@@ -85,7 +88,12 @@ export default class WordCloud {
 
     var token = tokens.enter()
       .append('span')
-      .attr('class', 'token');
+      .attr('class', 'token')
+      .on('click', function(d) {
+        var docId = this.parentNode.parentNode.__data__.id;
+        var token = d[0];
+        self.dispatch.select(token, docId, this);
+      });
 
     token
       .append('span')
@@ -104,4 +112,9 @@ export default class WordCloud {
     wordCloud.exit().remove();
 
   }
+
+  on(event, callback) {
+    this.dispatch.on(event, callback);
+  }
+
 }
