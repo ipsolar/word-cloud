@@ -85,7 +85,7 @@ import './wordcloud.css';
       kwik = <div>
         <KeywordInContext
           caseSensitive={true}
-          contextSize={30}
+          contextSize={this.props.config.kwikContextSize}
           text={this.state.kwikText}
           query={this.state.kwikQuery}
         />
