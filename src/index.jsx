@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import WordCloud from './components/wordcloud/wordcloud.jsx';
 
 import '../index.html';
+import './index.css';
 
 // This will render out an an example of wordcloud
 

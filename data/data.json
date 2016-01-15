@@ -1,7 +1,7 @@
 [
   {
     "id": "eliot_adam",
-    "name": "eliot_adam",
+    "name": "Adam Bede by George Eliot",
     "tokens": [
       ["the",10035],
       ["and",6762],
@@ -99,7 +99,7 @@
   },
   {
     "id": "austen_emma",
-    "name": "austen_emma",
+    "name": "Emma by Jane Austen",
     "tokens": [
       ["the",5198],
       ["to",5179],
@@ -201,7 +201,7 @@
   },
   {
     "id": "bronte_jane",
-    "name": "bronte_jane",
+    "name": "Jane Eyre by Charlotte Bronte",
     "tokens": [
       ["the",7832],
       ["i",7245],
