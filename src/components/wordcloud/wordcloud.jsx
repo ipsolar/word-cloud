@@ -60,14 +60,14 @@ import './wordcloud.css';
   }
 
   popover(style, content, onclose) {
-    return <div style={style}>
+    return (<div style={style}>
       <div className='controls'>
         <button onClick={onclose}>close</button>
       </div>
       <div>
         {content}
       </div>
-    </div>;
+    </div>);
   }
 
   renderKeywordInContext() {
@@ -90,10 +90,10 @@ import './wordcloud.css';
           query={this.state.kwikQuery}
         />
       </div>;
+      return this.popover(kwikPosition, kwik, () => {
+        this.setState({selectedNode: undefined});
+      });
     }
-    return this.popover(kwikPosition, kwik, () => {
-      this.setState({selectedNode: undefined});
-    });
   }
 
   render() {
