@@ -2,8 +2,8 @@ import React from 'react'; //eslint-disable-line
 import ReactDOM from 'react-dom';
 import WordCloud from './components/wordcloud/wordcloud.jsx';
 
-import '../index.html';
-import './index.css';
+import './demo.html';
+import './demo.css';
 
 // This will render out an an example of wordcloud
 

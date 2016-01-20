@@ -1,16 +1,20 @@
 {
-  "name": "WordCloud",
+  "name": "word-cloud",
   "version": "0.0.1",
   "description": "A word cloud visualization",
+  "keyword": ["text", "visualization"],
   "main": "src/index.jsx",
-  "author": "",
+  "author": "Yannick Assogba <yannick@bocoup.com>",
   "license": "MIT",
+  "repository": "https://github.com/learntextvis/word-cloud",
+  "files": ["dist", "src"],
+  "engines" : { "node" : ">=4.0" },
   "dependencies": {
     "d3": "^3.5.6",
     "lodash": "^4.0.0",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
-    "keyword-in-context": "^0.0.1"
+    "keyword-in-context": "^0.0.3"
   },
   "devDependencies": {
     "babel-core": "^6.3.13",
@@ -18,8 +22,7 @@
     "babel-plugin-transform-runtime": "^6.3.13",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
-    "css-loader": "^0.23.0",
-    "extract-text-webpack-plugin": "^0.9.1",
+    "css-loader": "^0.23.0",    
     "json-loader": "^0.5.4",
     "file-loader": "^0.8.5",
     "style-loader": "^0.13.0",
@@ -30,7 +33,9 @@
     "eslint-plugin-react": "^3.11.2"
   },
   "scripts": {
-    "start": "webpack-dev-server --progress --colors",
-    "build": "webpack"
+    "start": "webpack-dev-server --progress --colors --config webpack.dev.config.js",
+    "build-fast": "webpack",
+    "build-all": "MINIFY=true webpack && BUNDLE_DEPS=true,MINIFY=true webpack",
+    "prepublish": "npm run build-all"
   }
 }
