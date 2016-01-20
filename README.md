@@ -114,7 +114,7 @@ See below for documentation of parameters
  - config [Object]:
   - config.kwikContextSize [Integer]: The number of characters to display around a token when showing the keyword in context view.
  - data [Array]: See [data/data.json](data/data.json) for an example
- - kwikData [Array]: See [data/data.json](data/kwik_data.json) for an example
+ - kwikData [Array]: See [data/kwik_data.json](data/kwik_data.json) for an example
 
 # Customization
 
