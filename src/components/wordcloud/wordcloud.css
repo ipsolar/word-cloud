@@ -1,1 +1,11 @@
-/* Overrides go here */
+.keywords-in-context {
+  font-family: sans-serif;
+  font-size: 12px;
+  max-height:300px;
+  max-width: 500px;
+  overflow-y:auto;
+  margin-bottom:30px;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid grey
+}
