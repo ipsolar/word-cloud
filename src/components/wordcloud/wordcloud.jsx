@@ -116,3 +116,32 @@ WordCloudComponent.propTypes = {
 WordCloudComponent.defaultProps = {
   kwikData: []
 };
+
+/**
+ * Helper method for instatiating this method imperatively
+ * (as opposed to declaratively with React.)
+ *
+ * @param  {Object} opts display parameters.
+ * @param  {Object} opts.config
+ * @param  {Array} opts.data
+ * @param  {Array} opts.kwikData
+ * @param  {DOMNode} opts.container
+ * @param  {String} opts.query
+ *
+ */
+WordCloudComponent.show = function(opts) {
+  var config = opts.config;
+  var data = opts.data;
+  var kwikData = opts.kwikData;
+  var container = opts.container;
+
+  ReactDOM.render(
+    <WordCloudComponent
+      config={config}
+      data={data}
+      kwikData={kwikData}
+    />,
+    container
+  );
+
+};
