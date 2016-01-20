@@ -41,16 +41,17 @@ module.exports = {
   },
   output: {
     path: __dirname + '/dist',
-    filename: filename
+    filename: filename,
+    libraryTarget: 'umd'
   },
-  debug: true,
+  debug: false,
   devtool: 'source-map',
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
         include: [
-          /node_modules\/keyword_in_context/,
+          /node_modules\/keyword-in-context/,
           /src/,
           /index.js/
         ],
