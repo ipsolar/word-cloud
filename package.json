@@ -10,7 +10,7 @@
     "lodash": "^4.0.0",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
-    "keyword-in-context": "git://github.com/learntextvis/keyword-in-context.git "
+    "keyword-in-context": "^0.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.3.13",

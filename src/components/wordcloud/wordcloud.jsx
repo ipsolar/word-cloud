@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import WordCloud from '../../chart/wordcloud';
-import KeywordInContext from 'keyword-in-context';
+import {KeywordInContext} from 'keyword-in-context';
 
 import '../../chart/wordcloud.css';
 import './wordcloud.css';
