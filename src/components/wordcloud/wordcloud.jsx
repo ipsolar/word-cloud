@@ -15,18 +15,18 @@ import './wordcloud.css';
    constructor() {
      super();
      this.state = {
-       kwikQuery: '',
-       kwikText: '',
+       kwicQuery: '',
+       kwicText: '',
        selectedNode: ''
      };
    }
 
    // An event handler for when a word is selected in a word cloud
    selected(token, documentId, node) {
-     var text = this.props.kwikData.find((d) => d.id === documentId).text;
+     var text = this.props.kwicData.find((d) => d.id === documentId).text;
      this.setState({
-       'kwikQuery': token,
-       'kwikText': text,
+       'kwicQuery': token,
+       'kwicText': text,
        'selectedNode': node
      });
    }
@@ -71,26 +71,27 @@ import './wordcloud.css';
   }
 
   renderKeywordInContext() {
-    var kwik;
-    var kwikPosition;
+    var kwic;
+    var kwicPosition;
     if(this.state.selectedNode) {
       let nodeOffset = this.getOffset(this.state.selectedNode);
-      kwikPosition = {
+      kwicPosition = {
         position: 'absolute',
         top: nodeOffset.top + nodeOffset.height + 'px',
         left: nodeOffset.left + 'px',
         zIndex: 100
       };
 
-      kwik = <div>
+      kwic = <div>
         <KeywordInContext
-          caseSensitive={true}
-          contextSize={this.props.config.kwikContextSize}
-          text={this.state.kwikText}
-          query={this.state.kwikQuery}
+          caseSensitive={this.props.config.kwicCaseSensitive}
+          contextSize={this.props.config.kwicContextSize}
+          limit={this.props.config.kwicLimit}
+          text={this.state.kwicText}
+          query={this.state.kwicQuery}
         />
       </div>;
-      return this.popover(kwikPosition, kwik, () => {
+      return this.popover(kwicPosition, kwic, () => {
         this.setState({selectedNode: undefined});
       });
     }
@@ -110,11 +111,11 @@ WordCloudComponent.propTypes = {
   // document properties here.
   config: React.PropTypes.object.isRequired,
   data: React.PropTypes.array.isRequired,
-  kwikData: React.PropTypes.array
+  kwicData: React.PropTypes.array
 };
 
 WordCloudComponent.defaultProps = {
-  kwikData: []
+  kwicData: []
 };
 
 /**
@@ -124,7 +125,7 @@ WordCloudComponent.defaultProps = {
  * @param  {Object} opts display parameters.
  * @param  {Object} opts.config
  * @param  {Array} opts.data
- * @param  {Array} opts.kwikData
+ * @param  {Array} opts.kwicData
  * @param  {DOMNode} opts.container
  * @param  {String} opts.query
  *
@@ -132,14 +133,14 @@ WordCloudComponent.defaultProps = {
 WordCloudComponent.show = function(opts) {
   var config = opts.config;
   var data = opts.data;
-  var kwikData = opts.kwikData;
+  var kwicData = opts.kwicData;
   var container = opts.container;
 
   ReactDOM.render(
     <WordCloudComponent
       config={config}
       data={data}
-      kwikData={kwikData}
+      kwicData={kwicData}
     />,
     container
   );

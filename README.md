@@ -42,7 +42,7 @@ You should copy both these files into your project.
 <script type="text/javascript">
   // This config can be loaded from an external location using ajax.
   var config = {
-    "kwikContextSize": 30
+    "kwicContextSize": 30
   };
 
   // The data can be loaded from an external location.
@@ -66,7 +66,7 @@ You should copy both these files into your project.
   ]
 
   // Note this is only a sample of the text.
-  var kwikData = [
+  var kwicData = [
     {
       "id": "eliot_adam",
       "name": "Adam Bede by George Eliot",
@@ -81,7 +81,7 @@ You should copy both these files into your project.
   var opts = {
     config: config,
     data: data,
-    kwikData: kwikData,
+    kwicData: kwicData,
     container: container
   }
   WordCloud.show(opts)
@@ -100,7 +100,7 @@ ReactDOM.render(
   <WordCloud
     config={config}
     data={data}
-    kwikData={kwikData}
+    kwicData={kwicData}
   />,
   document.querySelector("#main"));
 ```
@@ -112,9 +112,11 @@ See below for documentation of parameters
 # Parameters
 
  - config [Object]:
-  - config.kwikContextSize [Integer]: The number of characters to display around a token when showing the keyword in context view.
+  - config.kwicContextSize [Integer]: The number of characters to display around a token when showing the keyword in context view.
+  - config.kwicCaseSensitive [Boolean]: Whether the keyword in context view is case sensitive when searching for matches.
+  - config.kwicLimit [Integer]: The maximum number of matches to show in the keyword in context view.
  - data [Array]: See [data/data.json](data/data.json) for an example
- - kwikData [Array]: See [data/kwik_data.json](data/kwik_data.json) for an example
+ - kwicData [Array]: See [data/kwic_data.json](data/kwic_data.json) for an example
 
 # Customization
 
