@@ -76,9 +76,9 @@ import './wordcloud.css';
     if(this.state.selectedNode) {
       let nodeOffset = this.getOffset(this.state.selectedNode);
       kwicPosition = {
-        position: 'absolute',
-        top: nodeOffset.top + nodeOffset.height + 'px',
-        left: nodeOffset.left + 'px',
+        position: 'absolute;',
+        top: nodeOffset.top + nodeOffset.height,
+        left: nodeOffset.left,
         zIndex: 100
       };
 
