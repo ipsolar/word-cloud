@@ -97,15 +97,13 @@ export default class WordCloud {
 
     token
       .append('span')
-      .attr('class', 'token-term')
-      .classed('unique', (d) => this.uniqueTokens.has(d[0]))
-      .style('font-size', (d) => this.fontSize(d[1]) + 'px')
-      .text((d) => d[0]);
-
-    token
+        .attr('class', 'token-term')
+        .classed('unique', (d) => this.uniqueTokens.has(d[0]))
+        .style('font-size', (d) => this.fontSize(d[1]) + 'px')
+        .text((d) => d[0])
       .append('sup')
-      .attr('class', 'token-score')
-      .text((d) => d[1]);
+        .attr('class', 'token-score')
+        .text((d) => d[1]);
 
 
     tokens.exit().remove();
