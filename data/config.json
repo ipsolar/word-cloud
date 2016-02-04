@@ -1,3 +1,5 @@
 {
-  "kwikContextSize": 30
+  "kwicContextSize": 30,
+  "kwicCaseSensitive": false,
+  "kwicLimit": 50
 }
