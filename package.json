@@ -1,6 +1,6 @@
 {
   "name": "word-cloud",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A word cloud visualization",
   "keyword": ["text", "visualization"],
   "main": "src/index.jsx",
